@@ -1,4 +1,5 @@
 ; Fichier de zone pour l1-8.ephec-ti.be
+$ORIGIN l1-8.ephec-ti.be.
 $TTL 86400
 @       IN      SOA     ns1.l1-8.ephec-ti.be. admin.l1-8.ephec-ti.be. (
                         2024032401  ; numéro de série (modifiable)
@@ -9,7 +10,11 @@ $TTL 86400
 
 ; Enregistrement NS (serveurs de noms)
 @       IN      NS      ns1.l1-8.ephec-ti.be.
+@       IN      MX      10      mail.l1-8.ephec-ti.be.
 
-; Enregistrements A (adresses IP)
-ns1       IN      A       54.37.14.135
-www       IN      A       54.37.14.135
+ns1     IN      A       54.37.14.135
+www     IN      A       54.37.14.135
+mail    IN      A       54.37.14.135
+@	IN	A	54.37.14.135
+
+l1-8.ephec-ti.be.  IN   TXT "v=spf1 mx -all"
