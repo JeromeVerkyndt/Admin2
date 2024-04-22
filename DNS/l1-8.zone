@@ -1,0 +1,25 @@
+; Fichier de zone pour l1-8.ephec-ti.be
+$ORIGIN l1-8.ephec-ti.be.
+$TTL 86400
+@       IN      SOA     ns.l1-8.ephec-ti.be. admin.l1-8.ephec-ti.be. (
+                        2024042101  ; numéro de série (modifiable)
+                        3600        ; délai de rafraîchissement
+                        1800        ; délai de réessai
+                        604800      ; délai d'expiration
+                        86400 )     ; délai minimal de cache
+
+; Enregistrement NS (serveurs de noms)
+@       IN      NS      ns.l1-8.ephec-ti.be.
+@       IN      MX      10      mail.l1-8.ephec-ti.be.
+
+ns	IN      A       54.37.14.135
+www     IN      A       54.37.14.135
+mail    IN      A	54.37.14.135
+
+l1-8.ephec-ti.be.	IN	TXT	"v=spf1 mx -all"
+
+mail._domainkey	IN	TXT	( "v=DKIM1; h=sha256; k=rsa; "
+	  "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0ekuDiOG7wWzzOYuLY+bOu9N8IBlxqSMQyU4S+DdqihImqSju/RPaRlDAvrqMTWJoXlRoUFg5CPiIYmZn4ddjV5PSr/m/OUvC3c4XF+bCOKUlZHSeXANocummLe4J6QLE95ie+gLs0/hEazWIX/AqItQ4b7wwAyzWZAiu0+zN7S5XH81FOUHGLWAUC043TpvXOwybQXHtmo4M9"
+	  "U7CG8FLrTCNsHe23MzG5K2YRx5g8NtwLMaIbNbRmMo1s4ObRJxHnPo+DNUgH40k/t8IxLsPcfOgy2WRuVjdLgy115wfS0F2eCNDKssW8A7NvNeVI4/vcKZkIoHa2rNWWao3RB4OQIDAQAB" )
+
+_dmarc	IN	TXT	"v=DMARC1; p=quarantine; rua=mailto:joe@l1-8.ephec-ti.be; ruf=mailto:joe@l1-8.ephec-ti.be; sp=quarantine; ri=86400"
